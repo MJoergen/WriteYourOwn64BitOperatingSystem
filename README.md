@@ -38,7 +38,7 @@ sudo apt install qemu qemu-system-x86-64
 sudo docker build buildenv -t myos-buildenv
 ```
 
-# Start docker environment
+# Enter docker environment
 ```
 sudo docker run --rm -it -v $PWD:/root/env myos-buildenv
 ```
@@ -46,5 +46,15 @@ sudo docker run --rm -it -v $PWD:/root/env myos-buildenv
 # Build kernel
 ```
 make build-x86_64
+```
+
+# Exit the docker environment
+```
+exit
+```
+
+# Start the OS
+```
+qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso
 ```
 
